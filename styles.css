@@ -1,0 +1,28 @@
+/* Style sheet
+   color picker www.w3schools.com/colors/colors_picker.asp
+*/
+
+/* Bootstrap default font-family is Helvetica Neue */
+h1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+body{
+  background-color:#62906c;
+}
+.relative {
+  position: relative;
+  border: 3px solid #73AD21;
+}
+textarea {
+  display: block;
+  margin-bottom: 5px;
+  
+}
+@media screen and (max-width:9000px) {
+  #dateTimeInput{
+    width: 300px;
+  }
+}
+
+/*© 2020 GitHub, Inc
