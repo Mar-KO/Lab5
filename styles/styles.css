@@ -10,6 +10,9 @@ h1 {
 body{
   background-color:#62906c;
 }
+#techy{
+  background-color:red;
+}
 .relative {
   position: relative;
   border: 3px solid #73AD21;
@@ -18,6 +21,14 @@ textarea {
   display: block;
   margin-bottom: 5px;
   
+}
+.block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text:hover {
+  background-color: #e6f2ff;
 }
 @media screen and (max-width:9000px) {
   #dateTimeInput{

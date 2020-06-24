@@ -27,7 +27,7 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <script src="https://kit.fontawesome.com/f45e40cf2b.js" crossorigin="anonymous"></script>
     <!-- Your own additional style sheet -->
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
 </head>
@@ -53,15 +53,34 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#info"><img src="images/peigne.png" alt="logo" style="width:30px;">Info</a>
+          <a class="nav-link" href="#info"><i class="fas fa-info"></i></i>Info</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="#accordion"><img src="images/tiger.png" alt="logo" style="width:30px;">Appointment</a>
-        </li>   
+          <a class="nav-link" href="#accordion"><i class="fas fa-calendar-alt"></i>Appointment</a>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="#techs"><i class="fas fa-user-tie"></i></i>Technicians</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#services"><i class="fas fa-bicycle"></i>Services</a>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="#accordion"><i class="fas fa-shopping-cart"></i>Payment</a>
+        </li>         
      </ul>
     </div>  
   </nav>
   <div class="background">
+      <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
+    <!-- These can be useful for making sure someone reads something before continuing -->
+    <div class="container p-3 my-3 border bg-light text-success">
+        <h2>Alert</h2>
+        <p>We have something important to say</p>
+        <div class="alert alert-danger alert-dismissible">
+            <button id="addCart" type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Please read! </strong>Due to the COVID-19 virus, we will not be open until June 16th.
+        </div>
+    </div>
     <div class="container-md p-3 my-3 border bg-light text-success">
         <h1>Welcome to Mike's Bikes</h1>
         <img class="card-img-top" src="images/bike.jpg" alt="Card image" style="width:40%">
@@ -71,17 +90,65 @@
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
     <div id="info" class="container-md p-3 my-3 border bg-light text-success">
-        <h3>Let us tell you about us!</h3>
+        <i class="fas fa-info"></i>
+        <h3>About us!</h3>
+        
         <p class="text-center text-uppercase" >We're located on 123 Bike drive</p>
         <p class="text-center text-uppercase" >Our email: mikesbikes@gmail.com</p>
-        <p class="text-center text-uppercase" >We're open 9am to 5pm</p>
+        <p class="text-center text-uppercase" >We're open 9am to 5pm everyday</p>
         <p class="text-center text-uppercase" >Our telephone is: (613) 111-2345</p>
     </div>
 
-
+    <div id="techs" class="container-md p-3 my-3 border bg-light text-success">
+        <div class="container p-3 my-3 border bg-light text-success">
+            <div class="container-md p-3 my-3 border bg-success text-white">
+                <i class="fas fa-user-tie"></i></i>
+                <h1>Meet our technicians</h1>
+            </div>
+            <div id="accordion" >
+                <div class="card">
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#Tom">Tom</a>
+                    </div>
+                    <div id="Tom" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <div>
+                                <p class="text-center text-uppercase block" >Tom is our Cyclist Master.</p>
+                                <img class="center block" src="images/Erwind.jpg" alt="Card image" style="width:10%">
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#Bot">Bot</a>
+                    </div>
+                    <div id="Bot" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <p class="text-center text-uppercase block" >Bot has been training for years in the mountains.</p>
+                            <img class="center block" src="images/Erwind.jpg" alt="Card image" style="width:10%">
+                        </div>
+                    </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#Mot">Mot</a>
+                    </div>
+                    <div id="Mot" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            
+                            <p class="text-center text-uppercase block" >Mot is just Mot honestly. He's good though.</p>
+                            <img class="center block" src="images/Erwind.jpg" alt="Card image" style="width:10%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
-    <div class="container p-3 my-3 border bg-light text-success">
+    <div id="services" class="container p-3 my-3 border bg-light text-success">
+        <i class="fas fa-bicycle"></i>
         <h2>Service description</h2>
         <p>Here is a list of services offered</p>            
         <table class="table table-primary table-hover">
@@ -109,16 +176,7 @@
     </div>
 
 
-    <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
-    <!-- These can be useful for making sure someone reads something before continuing -->
-    <div class="container p-3 my-3 border bg-light text-success">
-        <h2>Alert</h2>
-        <p>We have something important to say</p>
-        <div class="alert alert-danger alert-dismissible">
-            <button id="addCart" type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Please read! </strong>Due to the COVID-19 virus, we will not be open until June 16th.
-        </div>
-    </div>
+    
 
     
     <!-- Collapsible with multiple items - accordion -->
@@ -126,8 +184,10 @@
     <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
     <!-- could work well.  You can use other patterns too.  This is just an example. -->
     <div class="container p-3 my-3 border bg-light text-success">
-        <div class="container-md p-3 my-3 border bg-warning text-white">
-            <h1>Set up an appointment in 3 easy steps!</h1>
+        <div class="container-md p-3 my-3 border bg-success text-white">
+            <i class="fas fa-calendar-alt"></i>
+            <i class="fas fa-shopping-cart"></i>
+            <h1>Set up an appointment in 4 easy steps!</h1>
             <p>Bike fixing is our business</p>
         </div>
         <div id="accordion" >
@@ -140,7 +200,7 @@
                         <p>Here is our list of services</p>
                         <div id="Client" class="tabcontent">
                               Choose a Service:
-                              <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                              <select id="techService" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
                               <option value=""></option>
                               <option value="Bicycle Tune-Up">Bicycle Tune-Up</option>
                               <option value="Wheel Fix">Wheel Fix</option>
@@ -156,7 +216,7 @@
                     <div class="card-body">
                         <p>Here is our list of technicians</p>
                         <div id="Technician" class="tabcontent">
-                              <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+                              <select id="techChosen" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
                               <option value=""></option>
                               <option value="Tom">Tom</option>
                               <option value="Bot">Bot</option>
@@ -171,15 +231,15 @@
                 </div>
                 <div id="collapseDate" class="collapse" data-parent="#accordion">
                     <div class="card-body">
-                        <p>What date?</p>
+                        <p>What date is good for you?</p>
                         <!-- Bootstrap has various input components. Some examples are given here: -->
                         <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-                        <p>Date and time</p>
+                        <p>Please select a date</p>
                         <div class="form-group row">
                             
                             <label for="dateTimeInput" class=" col-form-label"></label>
                             <div class="col-2">
-                                <input class="form-control" type="datetime-local" id="dateTimeInput">
+                                <input class="form-control" type="datetime" id="dateTimeInput">
                             </div>
                         </div>
                     </div>
@@ -193,11 +253,11 @@
                     <div class="card-body relative">
                         <p>Your information so we can contact you</p>
                         <p>Form to enter name, email, phone</p>
-                        <textarea name="ui_strength" placeholder="Name"></textarea>
-                        <textarea name="ui_strength" placeholder="Email"></textarea>
-                        <textarea name="ui_strength" placeholder="Phone"></textarea>
-                        <input type="text" id="ccnum" name="cardnumber" placeholder="Credit Card Number">
-                        <button id="addCart" type="button" >
+                        <textarea id="name" class="text" name="ui_strength" placeholder="Name"></textarea>
+                        <textarea id="email" class="text" name="ui_strength" placeholder="Email"></textarea>
+                        <textarea id="phone" class="text" name="ui_strength" placeholder="Phone: xxxxxxxxxx"></textarea>
+                        <input id="credit" class="text" type="text" id="ccnum" name="cardnumber" placeholder="Credit Card: xxxxxxxxxxxx">
+                        <button id="submit" type="button" class="text" onclick="verifyAll()">
                             Submit
                         </button>
                     </div>
@@ -207,5 +267,100 @@
     </div>
 </div>
     <script src="scripts/main.js"></script>
+
+    <script>
+
+      function verifyCreditCard(){
+        var credit = document.getElementById('credit').value;
+        if (!isNaN(credit) && credit.length == 16) {
+            return true;
+        } else{
+            alert('bad credit');
+            return false;
+        }
+      }
+
+      function verifyPhone() {
+        var phone = document.getElementById('phone').value;
+        if (!isNaN(phone) && phone.length == 10) {
+            return true;
+        } else{
+            alert('bad phone');
+            return false;
+        }
+      }
+      function verifyAll(){
+          if(verifyPhone() && verifyCreditCard() == true){
+            var service = document.getElementById('techService').value;
+            var technician = document.getElementById('techChosen').value;
+            var date = document.getElementById('dateTimeInput').value;
+            var name = document.getElementById('name').value;
+            alert("Hello "+name+"! You're appointment is on "+date+" with "+technician+" for a "+service);
+          }
+        
+        
+      }
+           /* create an array of days which need to be disabled */
+    var disabledDays = ["3-3-2020","3-17-2020","4-2-2020","4-3-2020","4-4-2020","4-5-2020"];
+      
+      //Add days selected to disabled days
+      //Due to a formatting issue with dates, the selected date wont show up as greyed out
+      function addToDisabledDays(date){
+        $("#dateTimeInput").datepicker({
+        beforeShowDay: function(date) {
+        var day = date.getDay();
+        return [(day != 1 && day != 2), ''];
+    }
+});
+      }
+
+
+/*From here on, this code was found on https://davidwalsh.name/jquery-datepicker-disable-days
+to disable certain days such as the weekend and only book a month in advance*/
+
+
+/* utility functions */
+function nationalDays(date) {
+	var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+	//console.log('Checking (raw): ' + m + '-' + d + '-' + y);
+	for (i = 0; i < disabledDays.length; i++) {
+		if($.inArray((m+1) + '-' + d + '-' + y,disabledDays) != -1 || new Date() > date) {
+			//console.log('bad:  ' + (m+1) + '-' + d + '-' + y + ' / ' + disabledDays[i]);
+			return [false];
+		}
+	}
+	//console.log('good:  ' + (m+1) + '-' + d + '-' + y);
+	return [true];
+}
+function noWeekendsOrHolidays(date) {
+	var noWeekend = jQuery.datepicker.noWeekends(date);
+	return noWeekend[0] ? nationalDays(date) : noWeekend;
+}
+
+/* create datepicker */
+jQuery(document).ready(function() {
+	jQuery('#dateTimeInput').datepicker({
+		minDate: new Date(2020, 5, 16),
+		maxDate: new Date(2020, 6, 31),
+		dateFormat: 'DD, MM, d, yy',
+		constrainInput: true,
+		beforeShowDay: noWeekendsOrHolidays
+	});
+});
+function recreate(){
+    jQuery(document).ready(function() {
+	jQuery('#dateTimeInput').datepicker({
+		minDate: new Date(2020, 5, 16),
+		maxDate: new Date(2020, 6, 31),
+		dateFormat: 'DD, MM, d, yy',
+		constrainInput: true,
+		beforeShowDay: noWeekendsOrHolidays
+	});
+});
+}
+
+
+
+      </script>
 </body>
 </html>
